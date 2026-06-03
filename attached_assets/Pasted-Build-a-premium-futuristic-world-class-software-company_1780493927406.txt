@@ -1,0 +1,410 @@
+Build a premium, futuristic, world-class software company website called "FENZO".
+
+The website should feel like a billion-dollar startup, not a local software company.
+
+Design inspiration:
+
+Stripe
+Vercel
+Linear
+Framer
+Apple
+
+The entire website must be:
+
+Extremely modern
+Gen Z aesthetic
+Smooth animations
+Professional
+Premium
+Dark mode by default
+Mobile responsive
+SEO optimized
+Fast loading
+Interactive
+
+Tech Stack:
+
+React
+Next.js
+TypeScript
+Tailwind CSS
+Framer Motion
+GSAP
+Three.js
+ShadCN UI
+
+Primary colors:
+
+Black (#050505)
+White (#FFFFFF)
+
+Accent colors:
+
+Electric Purple (#8B5CF6)
+Neon Blue (#3B82F6)
+Cyan Glow (#06B6D4)
+
+Typography:
+
+Inter
+Space Grotesk
+
+Overall feel:
+
+Futuristic
+Luxury
+Innovative
+Startup vibe
+
+Animations should be smooth and premium.
+
+Do NOT use generic stock photos.
+
+Use custom illustrations, gradients, 3D effects, glowing cards, animated grids, floating particles, glassmorphism, and subtle motion effects.
+
+HERO SECTION
+
+Create an extraordinary hero section.
+
+Full-screen height.
+
+Background:
+
+Animated gradient mesh
+Floating particles
+Moving light beams
+Interactive mouse-follow glow
+
+Center content:
+
+Headline:
+
+"Building Digital Products That Move Businesses Forward."
+
+Subheadline:
+
+"We create websites, mobile apps, e-commerce platforms, AI solutions, and business automation systems that help companies scale faster."
+
+Buttons:
+
+Primary:
+"Start Your Project"
+
+Secondary:
+"View Our Work"
+
+Hero animations:
+
+Text reveal animation
+Fade-in effects
+Floating shapes
+Smooth parallax
+Mouse-responsive glow
+
+Add a 3D rotating futuristic sphere using Three.js.
+
+TRUST SECTION
+
+Show credibility.
+
+Animated counters:
+
+Projects Completed
+0+
+
+Happy Clients
+0+
+
+Years of Experience
+Growing
+
+Client Satisfaction
+100%
+
+Display with counting animations.
+
+SERVICES SECTION
+
+Use premium animated cards.
+
+Services:
+
+Website Development
+
+Corporate websites
+Business websites
+Landing pages
+Portfolio websites
+
+Mobile App Development
+
+Android
+iOS
+Cross-platform
+
+E-Commerce Solutions
+
+Online stores
+Payment integrations
+Inventory management
+
+AI Solutions
+
+AI chatbots
+AI automation
+Business intelligence
+Custom AI tools
+
+Business Automation
+
+CRM systems
+Workflow automation
+Reporting systems
+
+Custom Software
+
+Enterprise software
+Dashboards
+Management systems
+
+Hover effects:
+
+Glow effect
+Card lift
+Animated borders
+Icon transitions
+WHY FENZO SECTION
+
+Interactive timeline.
+
+Show:
+
+Discover
+Design
+Develop
+Deploy
+Scale
+
+Each step should animate when scrolled into view.
+
+PORTFOLIO SECTION
+
+Premium showcase.
+
+Create 6 project cards.
+
+Examples:
+
+SV Builders Website
+
+SV Mahal Booking Platform
+
+Construction Monitoring Dashboard
+
+AI Cost Estimator
+
+Restaurant Ordering App
+
+E-Commerce Platform
+
+Each card:
+
+Hover zoom
+Glass effect
+Animated overlay
+Project details popup
+PROCESS SECTION
+
+Create an animated workflow.
+
+Step 1:
+Requirement Analysis
+
+Step 2:
+UI/UX Design
+
+Step 3:
+Development
+
+Step 4:
+Testing
+
+Step 5:
+Deployment
+
+Step 6:
+Support
+
+Use animated connecting lines.
+
+TECHNOLOGIES SECTION
+
+Create infinite scrolling logo marquee.
+
+Include:
+
+React
+Next.js
+Node.js
+Spring Boot
+Java
+Python
+MySQL
+PostgreSQL
+MongoDB
+AWS
+Docker
+OpenAI
+Firebase
+
+Add glow effects.
+
+TESTIMONIALS SECTION
+
+Create:
+
+Auto sliding carousel
+Animated cards
+Floating reviews
+
+Include sample testimonials.
+
+FAQ SECTION
+
+Modern accordion.
+
+Questions:
+
+How much does a website cost?
+
+How long does development take?
+
+Do you provide maintenance?
+
+Can you develop AI solutions?
+
+Do you create mobile apps?
+
+CONTACT SECTION
+
+Highly premium contact section.
+
+Include:
+
+Name
+
+Email
+
+Phone
+
+Company
+
+Project Type
+
+Budget Range
+
+Message
+
+Add:
+
+Animated form validation
+Success animations
+Email integration
+FOOTER
+
+Modern startup footer.
+
+Include:
+
+Company
+Services
+Portfolio
+Careers
+Contact
+
+Social Icons:
+
+Instagram
+
+LinkedIn
+
+GitHub
+
+Email
+
+Copyright:
+© 2026 FENZO. All Rights Reserved.
+
+ADVANCED ANIMATIONS
+
+Implement:
+
+GSAP Scroll Animations
+
+Framer Motion Page Transitions
+
+Text Reveal Animations
+
+Mouse Follow Effects
+
+Parallax Scrolling
+
+Floating Objects
+
+Glowing Hover Effects
+
+Magnetic Buttons
+
+Animated Gradients
+
+Particle Background
+
+Loading Screen
+
+Page Transition Effects
+
+Smooth Scrolling
+
+Section Entrance Animations
+
+Card Tilt Effects
+
+3D Hover Effects
+
+SPECIAL FEATURE
+
+Create a floating AI assistant widget.
+
+Message:
+
+"Hi! I'm FENZO AI. Need a website, app, or AI solution?"
+
+Include:
+
+Animated chat popup
+Typing animation
+Lead capture form
+PERFORMANCE
+
+Target:
+
+95+ Lighthouse Score
+
+100% Mobile Responsive
+
+SEO Friendly
+
+Accessibility Optimized
+
+Fast Loading
+
+Production Ready
+
+FINAL GOAL
+
+The website should look so premium that visitors immediately feel:
+
+"FENZO is not another software company. This is a next-generation technology brand."
+
+Make every section visually stunning, highly interactive, and startup-grade. Avoid generic agency templates. Create a memorable experience with modern animations, futuristic visuals, and premium design throughout the entire website.
