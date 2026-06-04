@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 const services = [
   {
     id: "01",
+    anchor: "website-development",
     title: "Website Development",
     tagline: "High-performance marketing sites",
     description: "We architect digital experiences that convert visitors into customers. Our websites are built with modern frameworks to ensure lightning-fast load times, flawless SEO, and exceptional user experiences across all devices. We don't just build sites; we build growth engines.",
@@ -24,6 +25,7 @@ const services = [
   },
   {
     id: "02",
+    anchor: "mobile-app",
     title: "Mobile App Development",
     tagline: "Native performance, cross-platform reach",
     description: "From concept to app store in record time. We build applications that users love and use daily. Leveraging cutting-edge mobile frameworks, we deliver seamless native experiences while maintaining the efficiency of a unified codebase.",
@@ -37,6 +39,7 @@ const services = [
   },
   {
     id: "03",
+    anchor: "ecommerce",
     title: "E-Commerce Solutions",
     tagline: "Scalable stores that convert",
     description: "We build stores that sell while you sleep. Combining beautiful design with robust backend architecture to handle high-volume traffic, complex inventory, and secure global payments.",
@@ -50,6 +53,7 @@ const services = [
   },
   {
     id: "04",
+    anchor: "ai-solutions",
     title: "AI Solutions",
     tagline: "Intelligent systems that learn",
     description: "Intelligent systems that learn, adapt, and deliver outsized ROI. We integrate state-of-the-art LLMs and custom machine learning models directly into your business workflows.",
@@ -63,6 +67,7 @@ const services = [
   },
   {
     id: "05",
+    anchor: "automation",
     title: "Business Automation",
     tagline: "Work smarter, not harder",
     description: "Eliminate manual work with smart automation pipelines. We connect disparate systems, syncing data across your organization to save thousands of hours and reduce human error.",
@@ -76,6 +81,7 @@ const services = [
   },
   {
     id: "06",
+    anchor: "custom-software",
     title: "Custom Software",
     tagline: "Complex problems, elegant solutions",
     description: "Enterprise-grade software built for scale and longevity. When off-the-shelf tools fail, we engineer bespoke SaaS platforms, internal tools, and legacy system modernizations.",
@@ -209,6 +215,7 @@ export default function ServicesPage() {
             return (
               <motion.div 
                 key={service.id}
+                id={service.anchor}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
