@@ -22,22 +22,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4 text-muted-foreground">
               <li>
-                <Link href="/#about" className="hover:text-primary transition-colors">
+                <Link href="/" className="hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/#careers" className="hover:text-primary transition-colors">
+                <Link href="/" className="hover:text-primary transition-colors">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="/#blog" className="hover:text-primary transition-colors">
+                <Link href="/" className="hover:text-primary transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/#press" className="hover:text-primary transition-colors">
+                <Link href="/" className="hover:text-primary transition-colors">
                   Press
                 </Link>
               </li>
@@ -51,7 +51,7 @@ export default function Footer() {
             <ul className="space-y-4 text-muted-foreground">
               <li>
                 <Link
-                  href="/services#website-development"
+                  href="/services"
                   className="hover:text-primary transition-colors"
                 >
                   Website Development
@@ -59,7 +59,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services#mobile-app"
+                  href="/services"
                   className="hover:text-primary transition-colors"
                 >
                   Mobile App Development
@@ -67,7 +67,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services#ecommerce"
+                  href="/services"
                   className="hover:text-primary transition-colors"
                 >
                   E-Commerce Solutions
@@ -75,7 +75,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services#ai-solutions"
+                  href="/services"
                   className="hover:text-primary transition-colors"
                 >
                   AI Solutions
@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services#automation"
+                  href="/services"
                   className="hover:text-primary transition-colors"
                 >
                   Business Automation
@@ -91,7 +91,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services#custom-software"
+                  href="/services"
                   className="hover:text-primary transition-colors"
                 >
                   Custom Software

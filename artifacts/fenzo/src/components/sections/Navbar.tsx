@@ -22,7 +22,6 @@ export default function Navbar() {
   });
 
   const navLinks = [
-    { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/work", label: "Work" },
     { href: "/process", label: "Process" },
