@@ -32,6 +32,7 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 
       return () => clearInterval(timer);
     }
+    return undefined;
   }, [isInView, value]);
 
   return (

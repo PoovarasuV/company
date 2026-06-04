@@ -2,18 +2,39 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import LandingPage from "@/pages/LandingPage";
 import NotFound from "@/pages/not-found";
 
+const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
+const WorkPage = lazy(() => import("@/pages/WorkPage"));
+const ProcessPage = lazy(() => import("@/pages/ProcessPage"));
+const TechnologiesPage = lazy(() => import("@/pages/TechnologiesPage"));
+
 const queryClient = new QueryClient();
+
+function FallbackLoader() {
+  return (
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background">
+      <h1 className="text-6xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-pulse">
+        FENZO
+      </h1>
+    </div>
+  );
+}
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={LandingPage} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<FallbackLoader />}>
+      <Switch>
+        <Route path="/" component={LandingPage} />
+        <Route path="/services" component={ServicesPage} />
+        <Route path="/work" component={WorkPage} />
+        <Route path="/process" component={ProcessPage} />
+        <Route path="/technologies" component={TechnologiesPage} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 
