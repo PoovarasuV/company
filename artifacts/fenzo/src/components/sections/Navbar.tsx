@@ -12,11 +12,11 @@ const aboutLinks = [
 ];
 
 const workLinks = [
-  { href: "/work?cat=websites",   label: "Websites",     description: "Landing pages & full web experiences", icon: Monitor,         color: "#8B5CF6" },
-  { href: "/work?cat=mobile",     label: "Mobile Apps",  description: "iOS & Android native applications",    icon: Smartphone,      color: "#3B82F6" },
-  { href: "/work?cat=ecommerce",  label: "E-Commerce",   description: "Storefronts, checkout & payments",     icon: ShoppingBag,     color: "#06B6D4" },
-  { href: "/work?cat=ai",         label: "AI Solutions", description: "LLMs, chatbots & automation systems",  icon: Bot,             color: "#8B5CF6" },
-  { href: "/work?cat=dashboards", label: "Dashboards",   description: "Analytics, CRMs & internal tools",     icon: LayoutDashboard, color: "#3B82F6" },
+  { href: "/work/websites",   label: "Websites",     description: "Landing pages & full web experiences", icon: Monitor,         color: "#8B5CF6" },
+  { href: "/work/mobile",     label: "Mobile Apps",  description: "iOS & Android native applications",    icon: Smartphone,      color: "#3B82F6" },
+  { href: "/work/ecommerce",  label: "E-Commerce",   description: "Storefronts, checkout & payments",     icon: ShoppingBag,     color: "#06B6D4" },
+  { href: "/work/ai",         label: "AI Solutions", description: "LLMs, chatbots & automation systems",  icon: Bot,             color: "#8B5CF6" },
+  { href: "/work/dashboards", label: "Dashboards",   description: "Analytics, CRMs & internal tools",     icon: LayoutDashboard, color: "#3B82F6" },
 ];
 
 function NavDropdown({

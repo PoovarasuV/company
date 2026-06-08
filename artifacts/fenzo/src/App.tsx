@@ -14,6 +14,11 @@ const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const TeamPage = lazy(() => import("@/pages/TeamPage"));
 const TestimonialsPage = lazy(() => import("@/pages/TestimonialsPage"));
 const ClientsPage = lazy(() => import("@/pages/ClientsPage"));
+const WebsitesPage = lazy(() => import("@/pages/work/WebsitesPage"));
+const MobileAppsPage = lazy(() => import("@/pages/work/MobileAppsPage"));
+const EcommercePage = lazy(() => import("@/pages/work/EcommercePage"));
+const AISolutionsPage = lazy(() => import("@/pages/work/AISolutionsPage"));
+const DashboardsPage = lazy(() => import("@/pages/work/DashboardsPage"));
 
 const queryClient = new QueryClient();
 
@@ -40,6 +45,11 @@ function Router() {
         <Route path="/team" component={TeamPage} />
         <Route path="/testimonials" component={TestimonialsPage} />
         <Route path="/clients" component={ClientsPage} />
+        <Route path="/work/websites" component={WebsitesPage} />
+        <Route path="/work/mobile" component={MobileAppsPage} />
+        <Route path="/work/ecommerce" component={EcommercePage} />
+        <Route path="/work/ai" component={AISolutionsPage} />
+        <Route path="/work/dashboards" component={DashboardsPage} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
