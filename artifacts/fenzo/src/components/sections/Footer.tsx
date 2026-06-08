@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="mb-4">
-              <img src="/logo.png" alt="FENZO Web Design" className="h-14 w-auto object-contain" />
+              <img src="/logo-full.png" alt="FENZO Web Design" style={{ width: "200px", height: "auto" }} />
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Building Digital Products That Move Businesses Forward. We craft

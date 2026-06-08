@@ -144,8 +144,8 @@ export default function Navbar() {
       >
         <div className="container flex items-center justify-between h-20 px-4 mx-auto md:px-6">
           {/* Logo */}
-          <Link href="/" className="flex items-center" data-testid="link-home">
-            <img src="/logo.png" alt="FENZO Web Design" className="h-12 w-auto object-contain" />
+          <Link href="/" className="flex-shrink-0 flex items-center" data-testid="link-home">
+            <img src="/logo-full.png" alt="FENZO Web Design" style={{ width: "180px", height: "auto" }} />
           </Link>
 
           {/* Desktop nav */}
