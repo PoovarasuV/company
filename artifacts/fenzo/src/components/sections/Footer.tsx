@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="container px-4 mx-auto md:px-6">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-3xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              FENZO
-            </h3>
+            <div className="mb-4">
+              <img src="/logo.png" alt="FENZO Web Design" className="h-14 w-auto object-contain" />
+            </div>
             <p className="text-muted-foreground leading-relaxed">
               Building Digital Products That Move Businesses Forward. We craft
               premium software experiences.

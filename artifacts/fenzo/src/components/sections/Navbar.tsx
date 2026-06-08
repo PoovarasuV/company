@@ -144,10 +144,8 @@ export default function Navbar() {
       >
         <div className="container flex items-center justify-between h-20 px-4 mx-auto md:px-6">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2" data-testid="link-home">
-            <span className="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
-              FENZO
-            </span>
+          <Link href="/" className="flex items-center" data-testid="link-home">
+            <img src="/logo.png" alt="FENZO Web Design" className="h-12 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}
