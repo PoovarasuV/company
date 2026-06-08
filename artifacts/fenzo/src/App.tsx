@@ -10,6 +10,10 @@ const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
 const WorkPage = lazy(() => import("@/pages/WorkPage"));
 const ProcessPage = lazy(() => import("@/pages/ProcessPage"));
 const TechnologiesPage = lazy(() => import("@/pages/TechnologiesPage"));
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const TeamPage = lazy(() => import("@/pages/TeamPage"));
+const TestimonialsPage = lazy(() => import("@/pages/TestimonialsPage"));
+const ClientsPage = lazy(() => import("@/pages/ClientsPage"));
 
 const queryClient = new QueryClient();
 
@@ -32,6 +36,10 @@ function Router() {
         <Route path="/work" component={WorkPage} />
         <Route path="/process" component={ProcessPage} />
         <Route path="/technologies" component={TechnologiesPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/team" component={TeamPage} />
+        <Route path="/testimonials" component={TestimonialsPage} />
+        <Route path="/clients" component={ClientsPage} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
