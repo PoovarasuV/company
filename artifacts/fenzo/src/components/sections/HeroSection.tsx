@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 
 function CSSphere() {
@@ -49,6 +50,7 @@ function CSSphere() {
 export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -175,6 +177,7 @@ export default function HeroSection() {
                 size="lg"
                 data-testid="button-start-project"
                 className="h-14 px-8 text-base font-semibold bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 border-0 shadow-[0_0_40px_-8px_rgba(139,92,246,0.6)] transition-all duration-300"
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Start Your Project
               </Button>
@@ -185,7 +188,7 @@ export default function HeroSection() {
                 variant="outline"
                 data-testid="button-view-work"
                 className="h-14 px-8 text-base font-semibold border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-purple-500/40 transition-all duration-300"
-                onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => setLocation("/work")}
               >
                 View Our Work
               </Button>

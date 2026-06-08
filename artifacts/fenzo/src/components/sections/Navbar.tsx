@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +22,7 @@ export default function Navbar() {
   });
 
   const navLinks = [
+    { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/work", label: "Work" },
     { href: "/process", label: "Process" },
@@ -78,6 +79,14 @@ export default function Navbar() {
             <Button
               data-testid="button-start-project"
               className="hidden md:flex relative group overflow-hidden bg-transparent border border-primary/50 text-foreground hover:bg-primary/10 transition-all duration-300"
+              onClick={() => {
+                if (location === "/") {
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  setLocation("/");
+                  setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400);
+                }
+              }}
             >
               <span className="relative z-10">Start Project</span>
               <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
