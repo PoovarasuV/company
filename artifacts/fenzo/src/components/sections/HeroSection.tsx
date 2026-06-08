@@ -3,45 +3,33 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 
-function CSSphere() {
+function LogoDisplay() {
   return (
-    <div className="relative w-[420px] h-[420px] flex items-center justify-center">
+    <div className="relative flex items-center justify-center">
+      {/* Glow rings behind the logo */}
       <div
-        className="absolute w-[380px] h-[380px] rounded-full"
+        className="absolute rounded-full pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle at 35% 35%, #a78bfa 0%, #8B5CF6 25%, #3B82F6 55%, #06B6D4 80%, #050505 100%)",
-          boxShadow:
-            "0 0 80px 20px rgba(139,92,246,0.35), 0 0 160px 60px rgba(59,130,246,0.15), inset 0 0 60px rgba(6,182,212,0.2)",
-          animation: "sphereSpin 12s linear infinite",
-        }}
-      />
-      <div
-        className="absolute w-[380px] h-[380px] rounded-full"
-        style={{
-          background:
-            "repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(139,92,246,0.12) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(139,92,246,0.12) 29px)",
-          borderRadius: "50%",
-          animation: "sphereSpin 12s linear infinite",
-        }}
-      />
-      {[0, 60, 120].map((deg, i) => (
-        <div
-          key={i}
-          className="absolute w-[380px] h-[380px] rounded-full border border-purple-500/20"
-          style={{
-            transform: `rotateX(${deg}deg)`,
-            animation: `sphereSpin ${10 + i * 2}s linear infinite`,
-          }}
-        />
-      ))}
-      <div
-        className="absolute w-[460px] h-[460px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)",
+          width: "460px",
+          height: "460px",
+          background: "radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)",
           animation: "pulse 3s ease-in-out infinite",
         }}
+      />
+      <div
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          width: "380px",
+          height: "380px",
+          boxShadow: "0 0 80px 20px rgba(139,92,246,0.2), 0 0 160px 60px rgba(59,130,246,0.08)",
+          borderRadius: "50%",
+        }}
+      />
+      {/* Logo image */}
+      <img
+        src="/logo-full.png"
+        alt="FENZO Web Design"
+        style={{ width: "380px", height: "auto", position: "relative", zIndex: 1 }}
       />
     </div>
   );
@@ -206,7 +194,7 @@ export default function HeroSection() {
             transition: "transform 0.3s ease-out",
           }}
         >
-          <CSSphere />
+          <LogoDisplay />
         </motion.div>
       </div>
 
