@@ -139,7 +139,6 @@ function PricingCards() {
           <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Dedicated Engineering Team</li>
           <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> 24/7 SLA Support</li>
         </ul>
-        <Button variant="outline" className="w-full">Contact Sales</Button>
       </div>
     </div>
   );
