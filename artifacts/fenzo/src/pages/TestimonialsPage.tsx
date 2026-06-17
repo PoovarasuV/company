@@ -4,7 +4,6 @@ import { Link } from "wouter";
 import { ChevronRight, Star, Quote } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -160,7 +159,6 @@ export default function TestimonialsPage() {
       </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

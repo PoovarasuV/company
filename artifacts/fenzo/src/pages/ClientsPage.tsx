@@ -3,7 +3,6 @@ import { Link } from "wouter";
 import { ChevronRight, ExternalLink } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Button } from "@/components/ui/button";
 
 const fadeUp = {
@@ -178,7 +177,6 @@ export default function ClientsPage() {
       </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ArrowRight, CheckCircle2, ChevronDown, ExternalLink } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -89,72 +88,9 @@ const services = [
   }
 ];
 
-function PricingCards() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      {/* Starter */}
-      <div className="bg-card/50 backdrop-blur-md border border-border rounded-2xl p-8 flex flex-col relative overflow-hidden">
-        <h3 className="text-xl font-bold mb-2">Starter</h3>
-        <p className="text-muted-foreground text-sm mb-6">Perfect for small businesses establishing digital presence.</p>
-        <div className="text-4xl font-bold mb-6">$5k<span className="text-lg text-muted-foreground font-normal">-$15k</span></div>
-        <ul className="space-y-4 mb-8 flex-1">
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Landing Page Design</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Basic SEO Setup</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Contact Forms</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Mobile Responsive</li>
-          <li className="flex gap-3 text-sm items-center text-muted-foreground"><X className="w-5 h-5" /> Complex Integrations</li>
-          <li className="flex gap-3 text-sm items-center text-muted-foreground"><X className="w-5 h-5" /> AI Capabilities</li>
-        </ul>
-        <Button variant="outline" className="w-full">Get Started</Button>
-      </div>
-
-      {/* Growth */}
-      <div className="bg-card backdrop-blur-md border-2 border-primary/50 shadow-[0_0_30px_rgba(139,92,246,0.15)] rounded-2xl p-8 flex flex-col relative overflow-hidden transform md:-translate-y-4">
-        <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Most Popular</div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
-        <h3 className="text-xl font-bold mb-2 text-primary">Growth</h3>
-        <p className="text-muted-foreground text-sm mb-6">For scaling startups needing robust digital infrastructure.</p>
-        <div className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">$15k<span className="text-lg text-muted-foreground font-normal">-$40k</span></div>
-        <ul className="space-y-4 mb-8 flex-1">
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Multi-page Web App</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> CMS Integration</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Custom Animations</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> E-commerce / Payments</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Basic Automations</li>
-          <li className="flex gap-3 text-sm items-center text-muted-foreground"><X className="w-5 h-5" /> Advanced AI Systems</li>
-        </ul>
-        <Button className="w-full bg-primary hover:bg-primary/90 text-white">Choose Growth</Button>
-      </div>
-
-      {/* Enterprise */}
-      <div className="bg-card/50 backdrop-blur-md border border-border rounded-2xl p-8 flex flex-col relative overflow-hidden">
-        <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-        <p className="text-muted-foreground text-sm mb-6">Custom engineering for complex, high-volume operations.</p>
-        <div className="text-4xl font-bold mb-6">Custom</div>
-        <ul className="space-y-4 mb-8 flex-1">
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Full Stack Architecture</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Custom AI Models</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Complex Cloud Auth</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Native Mobile Apps</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> Dedicated Engineering Team</li>
-          <li className="flex gap-3 text-sm items-center"><CheckCircle2 className="w-5 h-5 text-primary" /> 24/7 SLA Support</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-// Just a tiny x icon
-function X({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
-    </svg>
-  );
-}
-
 
 export default function ServicesPage() {
+  const [, setLocation] = useLocation();
   const title = "Our Services".split(" ");
 
   return (
@@ -262,7 +198,11 @@ export default function ServicesPage() {
                       </Accordion>
                     </div>
 
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white gap-2 group">
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white gap-2 group"
+                      onClick={() => {
+                        setLocation("/");
+                        setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400);
+                      }}>
                       Get a Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
@@ -290,18 +230,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Pricing Preview */}
-      <section className="py-24 bg-black relative z-10 border-t border-white/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">Transparent Pricing</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">No hidden fees, no surprises. Just world-class engineering tailored to your operational scale.</p>
-          </div>
-          
-          <PricingCards />
-        </div>
-      </section>
-
       {/* Bottom CTA */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-transparent z-0" />
@@ -309,18 +237,18 @@ export default function ServicesPage() {
           <h2 className="text-4xl md:text-6xl font-bold font-heading tracking-tighter mb-6">Ready to build something extraordinary?</h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">Let's discuss how we can transform your vision into a scalable digital reality.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 text-lg px-8">
+            <Button size="lg" className="bg-white text-black hover:bg-white/90 text-lg px-8"
+              onClick={() => {
+                setLocation("/");
+                setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400);
+              }}>
               Start Project
-            </Button>
-            <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/10 text-lg px-8">
-              View Our Work
             </Button>
           </div>
         </div>
       </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

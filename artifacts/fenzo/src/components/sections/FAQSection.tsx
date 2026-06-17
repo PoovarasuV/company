@@ -10,7 +10,7 @@ import {
 const faqs = [
   {
     q: "How much does a website cost?",
-    a: "Our pricing depends on the project scope, features, and complexity. A standard corporate website might start around $5,000, while custom e-commerce platforms or web apps scale up based on requirements."
+    a: "Our pricing depends on the project scope, features, and complexity. A standard corporate website might start around $10,000, while custom e-commerce platforms or web apps scale up based on requirements."
   },
   {
     q: "How long does development take?",

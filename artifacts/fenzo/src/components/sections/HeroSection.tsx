@@ -6,6 +6,16 @@ import { Button } from "@/components/ui/button";
 function LogoDisplay() {
   return (
     <div className="relative flex items-center justify-center">
+      {/* Circle around the logo */}
+      <div
+        className="absolute rounded-full border-2 border-primary/30 pointer-events-none"
+        style={{
+          width: "400px",
+          height: "400px",
+          background: "radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)",
+          boxShadow: "0 0 60px 15px rgba(139,92,246,0.15), inset 0 0 60px 15px rgba(139,92,246,0.05)",
+        }}
+      />
       {/* Glow rings behind the logo */}
       <div
         className="absolute rounded-full pointer-events-none"
@@ -16,20 +26,11 @@ function LogoDisplay() {
           animation: "pulse 3s ease-in-out infinite",
         }}
       />
-      <div
-        className="absolute rounded-full pointer-events-none"
-        style={{
-          width: "380px",
-          height: "380px",
-          boxShadow: "0 0 80px 20px rgba(139,92,246,0.2), 0 0 160px 60px rgba(59,130,246,0.08)",
-          borderRadius: "50%",
-        }}
-      />
       {/* Logo image */}
       <img
         src="/logo-full.png"
         alt="FENZO Web Design"
-        style={{ width: "380px", height: "auto", position: "relative", zIndex: 1 }}
+        style={{ width: "320px", height: "auto", position: "relative", zIndex: 1, display: "block" }}
       />
     </div>
   );
@@ -168,17 +169,6 @@ export default function HeroSection() {
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Start Your Project
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-              <Button
-                size="lg"
-                variant="outline"
-                data-testid="button-view-work"
-                className="h-14 px-8 text-base font-semibold border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-purple-500/40 transition-all duration-300"
-                onClick={() => setLocation("/work")}
-              >
-                View Our Work
               </Button>
             </motion.div>
           </motion.div>

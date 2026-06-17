@@ -1,19 +1,42 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "wouter";
-import { ChevronRight, ArrowUpRight, Smartphone, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Link, useLocation } from "wouter";
+import { ChevronRight, Smartphone, ArrowRight, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const projects = [
-  { name: "DineEasy", desc: "Restaurant Ordering App", detail: "Multi-restaurant ordering app with real-time kitchen updates, in-app payments, and loyalty rewards. Shipped in 11 weeks.", tech: ["React Native", "Firebase", "Stripe"], metric: "50k+ orders served", gradient: "from-indigo-400 to-cyan-400" },
-  { name: "PropScan", desc: "Real Estate Discovery", detail: "Property search app with AR property previews, map-based search, and instant mortgage calculators.", tech: ["React Native", "Maps API", "AR Kit"], metric: "200k+ properties indexed", gradient: "from-sky-400 to-blue-600" },
-  { name: "FitTrack Pro", desc: "Fitness & Wellness App", detail: "Personalised workout planner with AI-generated programmes, video guides, and progress analytics.", tech: ["React Native", "TensorFlow", "AWS"], metric: "20k+ active users", gradient: "from-emerald-400 to-teal-600" },
-  { name: "ShopLocal", desc: "Hyperlocal Marketplace", detail: "Marketplace connecting independent retailers with nearby shoppers, complete with real-time inventory.", tech: ["React Native", "Node.js", "PostgreSQL"], metric: "5k+ merchants listed", gradient: "from-orange-400 to-red-500" },
-  { name: "MediBook", desc: "Healthcare Booking App", detail: "Patient-facing app for booking GP appointments, accessing test results, and managing prescriptions.", tech: ["React Native", "HL7 FHIR", "PostgreSQL"], metric: "30k+ appointments booked", gradient: "from-violet-500 to-purple-700" },
-  { name: "EduLearn Mobile", desc: "Mobile Learning App", detail: "Offline-first learning app with video lessons, quizzes, certifications, and peer discussion boards.", tech: ["React Native", "Expo", "SQLite"], metric: "4.9★ App Store rating", gradient: "from-amber-400 to-orange-600" },
+const appTypes = [
+  {
+    title: "E-Commerce & Retail Apps",
+    description: "Feature-rich shopping applications with secure payments, inventory management, and loyalty programs.",
+    features: ["Secure Payment Integration", "Real-time Inventory", "Push Notifications", "Loyalty Rewards", "Order Tracking"]
+  },
+  {
+    title: "Food & Delivery Apps",
+    description: "On-demand food ordering and delivery platforms with real-time order tracking and restaurant management.",
+    features: ["Real-time Kitchen Display", "GPS Tracking", "Multi-vendor Support", "In-app Payments", "Rating & Reviews"]
+  },
+  {
+    title: "Healthcare & Fitness Apps",
+    description: "Patient management, telemedicine, and fitness tracking applications with HIPAA compliance.",
+    features: ["Appointment Booking", "Video Consultations", "Health Tracking", "Prescription Management", "Secure Messaging"]
+  },
+  {
+    title: "Social & Communication Apps",
+    description: "Community platforms, messaging apps, and social networks with real-time features.",
+    features: ["Real-time Chat", "Video/Audio Calls", "Social Feeds", "User Profiles", "Content Sharing"]
+  },
+  {
+    title: "Business & Productivity Apps",
+    description: "Enterprise solutions, project management, and productivity tools for teams.",
+    features: ["Task Management", "Team Collaboration", "Analytics Dashboard", "Document Sharing", "Time Tracking"]
+  },
+  {
+    title: "Education & E-Learning Apps",
+    description: "Learning management systems, course platforms, and educational content delivery.",
+    features: ["Video Courses", "Interactive Quizzes", "Progress Tracking", "Certificates", "Offline Access"]
+  }
 ];
 
 const stats = [
@@ -26,6 +49,8 @@ const stats = [
 const platforms = ["iOS (Swift)", "Android (Kotlin)", "React Native", "Expo", "Flutter", "Firebase", "App Store Connect", "Google Play", "RevenueCat", "OneSignal", "Stripe Mobile", "AWS Amplify"];
 
 export default function MobileAppsPage() {
+  const [location, setLocation] = useLocation();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -59,12 +84,12 @@ export default function MobileAppsPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button className="h-12 px-7 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 border-0 font-semibold"
-              onClick={() => { window.location.href = "/"; setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400); }}>
+              onClick={() => {
+                setLocation("/");
+                setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400);
+              }}>
               Start Your App
             </Button>
-            <Link href="/work">
-              <Button variant="outline" className="h-12 px-7 border-white/10 hover:bg-white/5 font-semibold">All Projects</Button>
-            </Link>
           </div>
         </motion.div>
       </section>
@@ -83,33 +108,26 @@ export default function MobileAppsPage() {
       <section className="py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
-            <p className="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2">Portfolio</p>
-            <h2 className="text-4xl font-bold tracking-tighter">Mobile App Projects</h2>
+            <p className="text-xs font-bold tracking-widest uppercase text-blue-400 mb-2">What We Build</p>
+            <h2 className="text-4xl font-bold tracking-tighter">Types of Mobile Apps We Develop</h2>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <AnimatePresence>
-              {projects.map((p, i) => (
-                <motion.div key={p.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                  whileHover={{ y: -6 }}
-                  className="group relative bg-card/40 border border-white/5 rounded-3xl overflow-hidden cursor-pointer hover:border-blue-500/30 transition-all duration-300">
-                  <div className={`w-full aspect-[4/3] bg-gradient-to-br ${p.gradient} opacity-80 group-hover:scale-105 transition-transform duration-700`} />
-                  <div className="p-6 relative z-10 bg-gradient-to-t from-card via-card to-transparent absolute bottom-0 inset-x-0 pt-20">
-                    <Badge className="mb-2 bg-white/10 text-white hover:bg-white/20 border-0">Mobile App</Badge>
-                    <h3 className="text-xl font-bold mb-1">{p.name}</h3>
-                    <p className="text-muted-foreground text-sm mb-3">{p.detail}</p>
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {p.tech.map(t => <span key={t} className="text-[10px] uppercase tracking-wider text-muted-foreground px-2 py-1 bg-white/5 rounded-md">{t}</span>)}
-                    </div>
-                    <div className="text-blue-400 font-semibold text-sm border-t border-white/10 pt-3">{p.metric}</div>
-                  </div>
-                  <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
-                    <div className="flex items-center gap-2 font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      View Case Study <ArrowUpRight size={20} />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+            {appTypes.map((app, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                className="group relative bg-card/40 border border-white/5 rounded-3xl p-6 hover:border-blue-500/30 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold mb-3 text-foreground">{app.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{app.description}</p>
+                <ul className="space-y-2">
+                  {app.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -138,7 +156,10 @@ export default function MobileAppsPage() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Have an app idea? Let's build it.</h2>
             <p className="text-muted-foreground mb-8">From concept to App Store in as little as 8 weeks. Tell us what you're building.</p>
             <Button className="h-12 px-8 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 border-0 font-semibold"
-              onClick={() => { window.location.href = "/"; setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400); }}>
+              onClick={() => {
+                setLocation("/");
+                setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400);
+              }}>
               Get a Free Quote <ArrowRight size={16} className="ml-2" />
             </Button>
           </motion.div>
@@ -146,7 +167,6 @@ export default function MobileAppsPage() {
       </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

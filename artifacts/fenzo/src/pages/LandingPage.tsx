@@ -11,8 +11,7 @@ import TechMarquee from "@/components/sections/TechMarquee";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
-import FloatingAI from "@/components/FloatingAI";
-import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export default function LandingPage() {
   const [loading, setLoading] = useState(true);
@@ -80,44 +79,31 @@ export default function LandingPage() {
               <div>
                 <h4 className="mb-6 font-bold uppercase tracking-wider text-sm">Company</h4>
                 <ul className="space-y-4 text-muted-foreground">
-                  <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Press</a></li>
+                  <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="mb-6 font-bold uppercase tracking-wider text-sm">Services</h4>
                 <ul className="space-y-4 text-muted-foreground">
-                  <li><a href="#" className="hover:text-primary transition-colors">Website Development</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Mobile App Development</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">E-Commerce Solutions</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">AI Solutions</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Business Automation</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Custom Software</a></li>
+                  <li><a href="/work/websites" className="hover:text-primary transition-colors">Website Development</a></li>
+                  <li><a href="/work/mobile" className="hover:text-primary transition-colors">Mobile App Development</a></li>
+                  <li><a href="/work/ecommerce" className="hover:text-primary transition-colors">E-Commerce Solutions</a></li>
+                  <li><a href="/work/ai" className="hover:text-primary transition-colors">AI Solutions</a></li>
+                  <li><a href="/work/dashboards" className="hover:text-primary transition-colors">Logo Design</a></li>
                 </ul>
               </div>
               
               <div>
                 <h4 className="mb-6 font-bold uppercase tracking-wider text-sm">Contact</h4>
                 <ul className="space-y-4 text-muted-foreground mb-8">
-                  <li>hello@fenzo.com</li>
-                  <li>+1 (555) 123-4567</li>
-                  <li>San Francisco, CA</li>
+                  <li>info.fenzo@gmail.com</li>
+                  <li>+91 63832213966</li>
+                  <li>Katpadi, Vellore, Tamil Nadu, India</li>
                 </ul>
                 <div className="flex gap-4">
-                  <a href="#" className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all">
+                  <a href="https://www.instagram.com/fenzo_webdesign/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all">
                     <FaInstagram className="w-5 h-5" />
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all">
-                    <FaLinkedin className="w-5 h-5" />
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all">
-                    <FaGithub className="w-5 h-5" />
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all">
-                    <FaTwitter className="w-5 h-5" />
                   </a>
                 </div>
               </div>
@@ -128,8 +114,6 @@ export default function LandingPage() {
             </div>
           </div>
         </footer>
-
-        <FloatingAI />
       </div>
     </>
   );

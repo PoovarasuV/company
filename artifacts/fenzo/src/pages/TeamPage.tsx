@@ -3,7 +3,6 @@ import { Link } from "wouter";
 import { ChevronRight, Github, Linkedin, Twitter } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Button } from "@/components/ui/button";
 
 const fadeUp = {
@@ -13,15 +12,14 @@ const fadeUp = {
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 
 const team = [
-  { name: "Alex Rivera", role: "CEO & Co-Founder", dept: "Leadership", initials: "AR", gradient: "from-violet-600 to-purple-800", bio: "10+ years building products at scale. Former lead engineer at a Series B startup. Obsessed with developer experience and product strategy.", skills: ["Product Strategy", "Engineering Leadership", "AI/ML"] },
-  { name: "Maya Chen", role: "CTO & Co-Founder", dept: "Engineering", initials: "MC", gradient: "from-blue-600 to-cyan-700", bio: "Full-stack architect with deep expertise in distributed systems and cloud infrastructure. Loves performance optimization and clean APIs.", skills: ["System Architecture", "Cloud/AWS", "TypeScript"] },
-  { name: "Jordan Blake", role: "Head of Design", dept: "Design", initials: "JB", gradient: "from-cyan-600 to-teal-700", bio: "Previously UX Lead at a Fortune 500. Believes great design is invisible — it just works. Champion of accessibility-first thinking.", skills: ["UI/UX Design", "Design Systems", "Figma"] },
-  { name: "Priya Nair", role: "AI Solutions Lead", dept: "AI", initials: "PN", gradient: "from-purple-600 to-pink-700", bio: "ML engineer with 6 years in NLP and computer vision. Has deployed AI systems serving millions of users across 4 continents.", skills: ["LLMs", "Python/PyTorch", "LangChain"] },
-  { name: "Sam Torres", role: "Mobile Lead", dept: "Engineering", initials: "ST", gradient: "from-blue-700 to-indigo-800", bio: "Built apps with 50k+ daily active users. Specialist in React Native and Flutter with a passion for buttery-smooth animations.", skills: ["React Native", "Flutter", "iOS/Android"] },
-  { name: "Nadia Osei", role: "E-Commerce Architect", dept: "Engineering", initials: "NO", gradient: "from-violet-700 to-blue-700", bio: "Shopify Partner Expert and Stripe certified developer. Has built checkout flows processing over $20M in annual transactions.", skills: ["Next.js", "Shopify", "Stripe"] },
-  { name: "Kai Mitsuru", role: "DevOps & Cloud Engineer", dept: "Infrastructure", initials: "KM", gradient: "from-cyan-700 to-blue-800", bio: "AWS certified architect who lives in the terminal. Zero-downtime deployments and 99.9% uptime are his baseline — not his goal.", skills: ["AWS", "Docker", "Kubernetes"] },
-  { name: "Leila Ahmadi", role: "Business Automation Lead", dept: "Automation", initials: "LA", gradient: "from-purple-700 to-violet-900", bio: "Process engineer who eliminated 10,000 hours of manual work for clients in the last year alone. Makes companies hum.", skills: ["n8n", "Zapier", "Node.js"] },
-  { name: "Omar Hassan", role: "Backend Architect", dept: "Engineering", initials: "OH", gradient: "from-blue-800 to-cyan-900", bio: "Java and Spring Boot veteran with deep PostgreSQL expertise. Designed systems handling millions of concurrent requests.", skills: ["Java/Spring", "PostgreSQL", "Microservices"] },
+  { name: "Poovarasu V", role: "CEO", dept: "Leadership", initials: "PV", gradient: "from-violet-600 to-purple-800", bio: "3+ years building products at scale. Former lead engineer at a Series B startup. Obsessed with developer experience and product strategy.", skills: ["Product Strategy", "Engineering Leadership", "AI/ML"] },
+  { name: "Arvind M", role: "Head of Design", dept: "Design", initials: "AM", gradient: "from-cyan-600 to-teal-700", bio: "Previously UX Lead at a Fortune 500. Believes great design is invisible — it just works. Champion of accessibility-first thinking.", skills: ["UI/UX Design", "Design Systems", "Figma"] },
+  { name: "Punith T", role: "AI Solutions Lead", dept: "AI", initials: "PT", gradient: "from-purple-600 to-pink-700", bio: "ML engineer with 6 years in NLP and computer vision. Has deployed AI systems serving millions of users across 4 continents.", skills: ["LLMs", "Python/PyTorch", "LangChain"] },
+  { name: "Rajesh J", role: "Mobile Lead", dept: "Engineering", initials: "RJ", gradient: "from-blue-700 to-indigo-800", bio: "Built apps with 50k+ daily active users. Specialist in React Native and Flutter with a passion for buttery-smooth animations.", skills: ["React Native", "Flutter", "iOS/Android"] },
+  { name: "Jagath Kumar", role: "E-Commerce Architect", dept: "Engineering", initials: "JK", gradient: "from-violet-700 to-blue-700", bio: "Shopify Partner Expert and Stripe certified developer. Has built checkout flows processing over $20M in annual transactions.", skills: ["Next.js", "Shopify", "Stripe"] },
+  { name: "Lokesh K", role: "DevOps & Cloud Engineer", dept: "Infrastructure", initials: "LK", gradient: "from-cyan-700 to-blue-800", bio: "AWS certified architect who lives in the terminal. Zero-downtime deployments and 99.9% uptime are his baseline — not his goal.", skills: ["AWS", "Docker", "Kubernetes"] },
+  { name: "Vignesh S", role: "Business Automation Lead", dept: "Automation", initials: "VS", gradient: "from-purple-700 to-violet-900", bio: "Process engineer who eliminated 10,000 hours of manual work for clients in the last year alone. Makes companies hum.", skills: ["n8n", "Zapier", "Node.js"] },
+  { name: "Jaya Prakash K", role: "Backend Architect", dept: "Engineering", initials: "JP", gradient: "from-blue-800 to-cyan-900", bio: "Java and Spring Boot veteran with deep PostgreSQL expertise. Designed systems handling millions of concurrent requests.", skills: ["Java/Spring", "PostgreSQL", "Microservices"] },
 ];
 
 const deptColors: Record<string, string> = {
@@ -141,7 +139,6 @@ export default function TeamPage() {
       </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

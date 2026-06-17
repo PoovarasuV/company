@@ -2,21 +2,15 @@ import { useState, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Building2, Users, Star, Handshake, Monitor, Smartphone, ShoppingBag, Bot, LayoutDashboard } from "lucide-react";
+import { Menu, X, ChevronDown, Monitor, Smartphone, ShoppingBag, Bot, PenTool } from "lucide-react";
 
-const aboutLinks = [
-  { href: "/about",        label: "About FENZO", description: "Our story, mission & vision",       icon: Building2,       color: "#8B5CF6" },
-  { href: "/team",         label: "Our Team",    description: "The people behind the products",    icon: Users,           color: "#3B82F6" },
-  { href: "/testimonials", label: "Testimonials",description: "What our clients say",              icon: Star,            color: "#06B6D4" },
-  { href: "/clients",      label: "Our Clients", description: "Brands that trust us",              icon: Handshake,       color: "#8B5CF6" },
-];
 
 const workLinks = [
   { href: "/work/websites",   label: "Websites",     description: "Landing pages & full web experiences", icon: Monitor,         color: "#8B5CF6" },
   { href: "/work/mobile",     label: "Mobile Apps",  description: "iOS & Android native applications",    icon: Smartphone,      color: "#3B82F6" },
   { href: "/work/ecommerce",  label: "E-Commerce",   description: "Storefronts, checkout & payments",     icon: ShoppingBag,     color: "#06B6D4" },
   { href: "/work/ai",         label: "AI Solutions", description: "LLMs, chatbots & automation systems",  icon: Bot,             color: "#8B5CF6" },
-  { href: "/work/dashboards", label: "Dashboards",   description: "Analytics, CRMs & internal tools",     icon: LayoutDashboard, color: "#3B82F6" },
+  { href: "/work/dashboards", label: "Logo Design",  description: "Brand identity & visual design",       icon: PenTool,          color: "#3B82F6" },
 ];
 
 function NavDropdown({
@@ -111,7 +105,6 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileWorkOpen, setMobileWorkOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -121,10 +114,10 @@ export default function Navbar() {
     setIsScrolled(latest > 50);
   });
 
-  const isAboutActive = ["/about", "/team", "/testimonials", "/clients"].includes(location);
   const isWorkActive  = location === "/work" || location.startsWith("/work");
 
   const plainLinks = [
+    { href: "/about",        label: "About"        },
     { href: "/services",     label: "Services"     },
     { href: "/process",      label: "Process"      },
     { href: "/technologies", label: "Technologies" },
@@ -165,13 +158,6 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* About Us dropdown */}
-            <NavDropdown
-              label="About Us"
-              links={aboutLinks}
-              isActive={isAboutActive}
-              layoutId="navbar-active"
-            />
 
             {/* Work dropdown */}
             <NavDropdown
@@ -248,14 +234,6 @@ export default function Navbar() {
                 Home
               </Link>
 
-              {/* About Us mobile accordion */}
-              <MobileAccordion
-                label="About Us"
-                links={aboutLinks}
-                open={mobileAboutOpen}
-                onToggle={() => setMobileAboutOpen(!mobileAboutOpen)}
-                onLinkClick={() => { setIsMobileMenuOpen(false); setMobileAboutOpen(false); }}
-              />
 
               {/* Work mobile accordion */}
               <MobileAccordion

@@ -5,15 +5,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, Suspense, lazy } from "react";
 import LandingPage from "@/pages/LandingPage";
 import NotFound from "@/pages/not-found";
+import FloatingWhatsApp from "@/components/sections/FloatingWhatsApp";
 
 const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
 const WorkPage = lazy(() => import("@/pages/WorkPage"));
 const ProcessPage = lazy(() => import("@/pages/ProcessPage"));
 const TechnologiesPage = lazy(() => import("@/pages/TechnologiesPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
-const TeamPage = lazy(() => import("@/pages/TeamPage"));
-const TestimonialsPage = lazy(() => import("@/pages/TestimonialsPage"));
-const ClientsPage = lazy(() => import("@/pages/ClientsPage"));
 const WebsitesPage = lazy(() => import("@/pages/work/WebsitesPage"));
 const MobileAppsPage = lazy(() => import("@/pages/work/MobileAppsPage"));
 const EcommercePage = lazy(() => import("@/pages/work/EcommercePage"));
@@ -42,9 +40,6 @@ function Router() {
         <Route path="/process" component={ProcessPage} />
         <Route path="/technologies" component={TechnologiesPage} />
         <Route path="/about" component={AboutPage} />
-        <Route path="/team" component={TeamPage} />
-        <Route path="/testimonials" component={TestimonialsPage} />
-        <Route path="/clients" component={ClientsPage} />
         <Route path="/work/websites" component={WebsitesPage} />
         <Route path="/work/mobile" component={MobileAppsPage} />
         <Route path="/work/ecommerce" component={EcommercePage} />
@@ -67,6 +62,7 @@ function App() {
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <Router />
         </WouterRouter>
+        <FloatingWhatsApp />
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

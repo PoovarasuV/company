@@ -6,11 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactSection() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data: any) => {
-    console.log(data);
-    // show success message
+    const message = `*New Project Request*\n\n*Name:* ${data.name}\n*Email:* ${data.email}\n*Project Type:* ${data.projectType}\n*Message:* ${data.message}`;
+    const whatsappNumber = "6383213966";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+    reset();
   };
 
   return (
@@ -29,15 +32,15 @@ export default function ContactSection() {
             <div className="space-y-6">
               <div>
                 <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">Email</h4>
-                <p className="text-xl font-medium">hello@fenzo.com</p>
+                <p className="text-xl font-medium">info.fenzo@gmail.com</p>
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">Phone</h4>
-                <p className="text-xl font-medium">+1 (555) 123-4567</p>
+                <p className="text-xl font-medium">+91 63832213966</p>
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">Location</h4>
-                <p className="text-xl font-medium">San Francisco, CA</p>
+                <p className="text-xl font-medium">Katpadi, Vellore, Tamil Nadu, India</p>
               </div>
             </div>
           </motion.div>
@@ -54,11 +57,11 @@ export default function ContactSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Name</label>
-                  <Input {...register("name")} placeholder="John Doe" className="bg-card" />
+                  <Input {...register("name")} placeholder="Raghul" className="bg-card" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Email</label>
-                  <Input {...register("email")} type="email" placeholder="john@company.com" className="bg-card" />
+                  <Input {...register("email")} type="email" placeholder="raghul@company.com" className="bg-card" />
                 </div>
               </div>
               

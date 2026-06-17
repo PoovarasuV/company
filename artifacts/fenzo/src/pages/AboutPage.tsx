@@ -3,7 +3,6 @@ import { Link } from "wouter";
 import { ChevronRight, Target, Eye, Heart, Zap, Globe, Award } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Button } from "@/components/ui/button";
 
 const fadeUp = {
@@ -26,12 +25,11 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2019", title: "Founded", desc: "FENZO was born in a small co-working space with three developers and a shared conviction — software should be extraordinary." },
-  { year: "2020", title: "First 10 Clients", desc: "Rapid word-of-mouth growth fueled by results. We hit 10 clients in 12 months, entirely through referrals." },
-  { year: "2021", title: "AI Division Launched", desc: "We built our dedicated AI & automation practice as demand for intelligent systems surged post-pandemic." },
-  { year: "2022", title: "50+ Projects Delivered", desc: "Crossed the milestone of 50 successfully shipped products — websites, apps, platforms, and AI tools — each on time." },
-  { year: "2023", title: "Global Expansion", desc: "Our client base grew across 12 countries. Remote-first culture let us hire the best talent regardless of geography." },
-  { year: "2024", title: "150+ Projects, 80+ Clients", desc: "FENZO is now a trusted partner to startups, SMEs, and enterprises building their digital future." },
+  { year: "2025", title: "Founded", desc: "FENZO was born with a shared conviction — software should be extraordinary. We started with a vision to build premium digital products for businesses." },
+  { year: "2025", title: "First Clients", desc: "Rapid word-of-mouth growth fueled by results. We gained our first clients through referrals, delivering quality work that spoke for itself." },
+  { year: "2026", title: "AI Division Launched", desc: "We built our dedicated AI & automation practice as demand for intelligent systems surged. Custom chatbots, process automation, and predictive analytics became our specialty." },
+  { year: "2026", title: "20+ Projects Delivered", desc: "Crossed the milestone of 20 successfully shipped products — websites, apps, platforms, and AI tools — each on time and exceeding expectations." },
+  { year: "2026", title: "20+ Happy Clients", desc: "FENZO is now a trusted partner to startups, SMEs, and enterprises building their digital future. Client satisfaction remains our top priority." },
 ];
 
 export default function AboutPage() {
@@ -60,16 +58,6 @@ export default function AboutPage() {
           <motion.p variants={fadeUp} className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
             FENZO is a next-generation software agency building websites, apps, AI systems, and automation tools that give businesses an unfair advantage.
           </motion.p>
-          <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-4">
-            <Button className="h-12 px-7 bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 border-0 font-semibold" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-              Work With Us
-            </Button>
-            <Link href="/team">
-              <Button variant="outline" className="h-12 px-7 border-white/10 bg-white/5 hover:bg-white/10 font-semibold">
-                Meet The Team
-              </Button>
-            </Link>
-          </motion.div>
         </motion.div>
       </section>
 
@@ -77,9 +65,9 @@ export default function AboutPage() {
       <section className="border-y border-border/40 bg-card/30">
         <div className="container mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "150+", label: "Projects Shipped" },
-            { value: "80+", label: "Happy Clients" },
-            { value: "5+", label: "Years Building" },
+            { value: "20+", label: "Projects Shipped" },
+            { value: "20+", label: "Happy Clients" },
+            { value: "1+", label: "Years Building" },
             { value: "12+", label: "Countries Served" },
           ].map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.6 }}>
@@ -98,7 +86,7 @@ export default function AboutPage() {
               <p className="text-xs font-bold tracking-widest uppercase text-primary mb-4">Our Story</p>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">From a shared office to a global agency</h2>
               <p className="text-muted-foreground leading-relaxed mb-5">
-                FENZO was founded in 2019 by a group of engineers who were tired of watching companies overpay for mediocre software. We believed that world-class digital products should be accessible to every business — not just the Fortune 500.
+                FENZO was founded in 2025 by a group of engineers who were tired of watching companies overpay for mediocre software. We believed that world-class digital products should be accessible to every business — not just the Fortune 500.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-5">
                 Starting with three developers and a handful of clients who trusted us, we grew through results alone. Every project shipped on time. Every client who came back with a bigger project. Every referral that turned into a long-term relationship.
@@ -108,18 +96,14 @@ export default function AboutPage() {
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-              <div className="relative">
-                <div className="w-full aspect-square rounded-3xl" style={{ background: "radial-gradient(ellipse at 30% 30%, rgba(139,92,246,0.3), rgba(59,130,246,0.2), rgba(6,182,212,0.1), #050505 70%)", border: "1px solid rgba(139,92,246,0.2)" }}>
-                  <div className="absolute inset-6 rounded-2xl border border-white/5 flex items-center justify-center">
-                    <span className="text-[120px] font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-violet-400/30 via-blue-400/20 to-cyan-400/10 select-none">F</span>
+              <div className="relative w-full aspect-square rounded-3xl flex items-center justify-center overflow-hidden">
+                <img src="/logo-full.png" alt="FENZO" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+                {[{ top: "10%", right: "8%", label: "20+ Projects", sub: "Delivered on time" }, { bottom: "12%", left: "8%", label: "100% Satisfaction", sub: "Client retention" }].map((badge, i) => (
+                  <div key={i} className="absolute px-4 py-2.5 rounded-xl border border-border/60 bg-background/80 backdrop-blur-sm" style={{ top: badge.top, right: badge.right, bottom: badge.bottom, left: badge.left }}>
+                    <p className="text-sm font-bold text-foreground">{badge.label}</p>
+                    <p className="text-xs text-muted-foreground">{badge.sub}</p>
                   </div>
-                  {[{ top: "10%", right: "8%", label: "150+ Projects", sub: "Delivered on time" }, { bottom: "12%", left: "8%", label: "100% Satisfaction", sub: "Client retention" }].map((badge, i) => (
-                    <div key={i} className="absolute px-4 py-2.5 rounded-xl border border-border/60 bg-background/80 backdrop-blur-sm" style={{ top: badge.top, right: badge.right, bottom: badge.bottom, left: badge.left }}>
-                      <p className="text-sm font-bold text-foreground">{badge.label}</p>
-                      <p className="text-xs text-muted-foreground">{badge.sub}</p>
-                    </div>
-                  ))}
-                </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -172,22 +156,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-3xl text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="p-10 rounded-3xl border border-primary/20" style={{ background: "radial-gradient(ellipse at center, rgba(139,92,246,0.08), transparent 70%)" }}>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Ready to build something great?</h2>
-            <p className="text-muted-foreground mb-8">Join the 80+ companies who chose FENZO as their technology partner.</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/work"><Button className="h-12 px-7 bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 border-0 font-semibold">See Our Work</Button></Link>
-              <Link href="/team"><Button variant="outline" className="h-12 px-7 border-white/10 hover:bg-white/5 font-semibold">Meet The Team</Button></Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

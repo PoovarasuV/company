@@ -1,33 +1,54 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, X } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const categories = ["All", "Websites", "Mobile Apps", "E-Commerce", "AI Solutions", "Dashboards"];
+const categories = ["Websites", "Mobile Apps", "E-Commerce", "AI Solutions", "Logo Design"];
 
 const projects = [
-  { id: 1, name: "SV Builders", category: "Websites", desc: "Corporate Website", tech: ["React", "Next.js", "Tailwind"], metric: "+200% lead gen", gradient: "from-blue-500 to-cyan-400" },
-  { id: 2, name: "SV Mahal", category: "Websites", desc: "Booking Platform", tech: ["React", "Node.js", "PostgreSQL"], metric: "5k+ bookings/mo", gradient: "from-purple-500 to-pink-500" },
-  { id: 3, name: "ConstructPro", category: "Dashboards", desc: "Monitoring Dashboard", tech: ["Vue", "D3.js", "AWS"], metric: "60% faster reporting", gradient: "from-emerald-400 to-teal-600" },
+  { id: 7, name: "HRFlow", category: "Websites", desc: "HR Automation", tech: ["Node.js", "n8n", "PostgreSQL"], metric: "80% manual work cut", gradient: "from-blue-600 to-indigo-600", images: ["hrflow-1.png", "hrflow-2.png", "hrflow-3.png", "hrflow-4.png", "hrflow-5.png", "hrflow-6.png"] },
+  { id: 12, name: "EduLearn", category: "Websites", desc: "E-Learning Platform", tech: ["Next.js", "PostgreSQL", "AWS"], metric: "500k+ learners", gradient: "from-amber-300 to-orange-500", images: ["edulearn-1.png", "edulearn-2.png", "edulearn-3.png", "edulearn-4.png", "edulearn-5.png", "edulearn-6.png", "edulearn-7.png", "edulearn-8.png", "edulearn-9.png", "edulearn-10.png"] },
+  { id: 13, name: "Customized Gym Website", category: "Websites", desc: "Fitness Platform", tech: ["React", "Tailwind", "Node.js"], metric: "Modern UI/UX", gradient: "from-green-500 to-emerald-400", images: ["gym-1.png", "gym-2.png", "gym-3.png", "gym-4.png", "gym-5.png", "gym-6.png"] },
+  { id: 14, name: "Customized Clinic Website", category: "Websites", desc: "Healthcare Platform", tech: ["React", "Tailwind", "Node.js"], metric: "Patient-Friendly UI", gradient: "from-teal-500 to-cyan-400", images: ["clinic-preview.png", "clinic-1.png", "clinic-2.png", "clinic-3.png", "clinic-4.png", "clinic-5.png", "clinic-6.png", "clinic-7.png", "clinic-8.png", "clinic-9.png", "clinic-10.png"] },
+  { id: 3, name: "ConstructPro", category: "Logo Design", desc: "Monitoring Dashboard", tech: ["Vue", "D3.js", "AWS"], metric: "60% faster reporting", gradient: "from-emerald-400 to-teal-600" },
   { id: 4, name: "CostAI", category: "AI Solutions", desc: "AI Cost Estimator", tech: ["Python", "OpenAI", "FastAPI"], metric: "$2M saved", gradient: "from-orange-400 to-red-500" },
-  { id: 5, name: "DineEasy", category: "Mobile Apps", desc: "Restaurant Ordering", tech: ["React Native", "Firebase"], metric: "50k+ orders", gradient: "from-indigo-400 to-cyan-400" },
-  { id: 6, name: "StyleHub", category: "E-Commerce", desc: "Premium E-Commerce", tech: ["Next.js", "Stripe", "Shopify"], metric: "+340% revenue YoY", gradient: "from-violet-600 to-fuchsia-500" },
-  { id: 7, name: "HRFlow", category: "Websites", desc: "HR Automation", tech: ["Node.js", "n8n", "PostgreSQL"], metric: "80% manual work cut", gradient: "from-blue-600 to-indigo-600" },
-  { id: 8, name: "MediTrack", category: "Dashboards", desc: "Healthcare Dashboard", tech: ["React", "Express", "MongoDB"], metric: "10k+ patients", gradient: "from-teal-400 to-emerald-500" },
-  { id: 9, name: "LegalAI", category: "AI Solutions", desc: "Legal Document AI", tech: ["Python", "LangChain", "GPT-4"], metric: "90% faster review", gradient: "from-slate-700 to-slate-900" },
-  { id: 10, name: "PropScan", category: "Mobile Apps", desc: "Real Estate App", tech: ["React Native", "Maps API"], metric: "200k+ properties", gradient: "from-sky-400 to-blue-600" },
-  { id: 11, name: "FinPulse", category: "Dashboards", desc: "FinTech Dashboard", tech: ["React", "D3.js", "WebSockets"], metric: "Real-time for 50k users", gradient: "from-rose-400 to-orange-500" },
-  { id: 12, name: "EduLearn", category: "Websites", desc: "E-Learning Platform", tech: ["Next.js", "PostgreSQL", "AWS"], metric: "500k+ learners", gradient: "from-amber-300 to-orange-500" }
+  { id: 5, name: "DineEasy", category: "Mobile Apps", desc: "Restaurant Ordering", tech: ["React Native", "Firebase"], metric: "50k+ orders", gradient: "from-indigo-400 to-cyan-400", images: ["dineeasy-1.png", "dineeasy-2.png", "dineeasy-3.png", "dineeasy-4.png", "dineeasy-5.png"] },
+  { id: 6, name: "StyleHub", category: "E-Commerce", desc: "Premium E-Commerce", tech: ["Next.js", "Stripe", "Shopify"], metric: "+340% revenue YoY", gradient: "from-violet-600 to-fuchsia-500", images: ["stylehub-1.png", "stylehub-2.png", "stylehub-3.png", "stylehub-4.png", "stylehub-5.png", "stylehub-6.png", "stylehub-7.png"] },
+  { id: 15, name: "GearPro", category: "E-Commerce", desc: "Sports Equipment", tech: ["Next.js", "Stripe", "SAP"], metric: "60% checkout conversion", gradient: "from-blue-500 to-indigo-600", images: ["gearpro-1.png", "gearpro-2.png", "gearpro-3.png", "gearpro-4.png"] },
 ];
 
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const filteredProjects = projects.filter(p => activeFilter === "All" || p.category === activeFilter);
+
+  const handleNextImage = () => {
+    if (selectedProject && selectedProject.images) {
+      setCurrentImageIndex((prev) => (prev + 1) % selectedProject.images!.length);
+    }
+  };
+
+  const handlePrevImage = () => {
+    if (selectedProject && selectedProject.images) {
+      setCurrentImageIndex((prev) => (prev - 1 + selectedProject.images!.length) % selectedProject.images!.length);
+    }
+  };
+
+  const handleImageClick = () => {
+    setIsZoomed(!isZoomed);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+    setIsZoomed(false);
+  };
 
   return (
     <div className="min-h-screen bg-[#050505] text-white">
@@ -65,7 +86,7 @@ export default function WorkPage() {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-1">150+</div>
+              <div className="text-4xl font-bold text-primary mb-1">80+</div>
               <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Projects</div>
             </div>
             <div className="text-center md:border-l md:border-r border-white/10">
@@ -120,9 +141,19 @@ export default function WorkPage() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
                   className="group relative bg-card/40 border border-white/5 rounded-3xl overflow-hidden cursor-pointer"
+                  onClick={() => project.images && (setSelectedProject(project), setCurrentImageIndex(0))}
                 >
                   {/* Image Placeholder */}
-                  <div className={`w-full aspect-[4/3] bg-gradient-to-br ${project.gradient} opacity-80 group-hover:scale-105 transition-transform duration-700`} />
+                  {project.images ? (
+                    <img
+                      src={`/works/${encodeURIComponent(project.images[0])}`}
+                      alt={project.name}
+                      style={{ objectPosition: "0% center" }}
+                      className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className={`w-full aspect-[4/3] bg-gradient-to-br ${project.gradient} opacity-80 group-hover:scale-105 transition-transform duration-700`} />
+                  )}
                   
                   <div className="p-6 relative z-10 bg-gradient-to-t from-card via-card to-transparent absolute bottom-0 inset-x-0 pt-20">
                     <Badge className="mb-3 bg-white/10 text-white hover:bg-white/20 border-0">{project.category}</Badge>
@@ -143,7 +174,7 @@ export default function WorkPage() {
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
                     <div className="flex items-center gap-2 font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      View Case Study <ArrowUpRight className="w-5 h-5" />
+                      View Images <ArrowUpRight className="w-5 h-5" />
                     </div>
                   </div>
                 </motion.div>
@@ -217,8 +248,75 @@ export default function WorkPage() {
         </div>
       </section>
 
+      {/* Image Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={handleCloseModal}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-6xl w-full max-h-[90vh] bg-card rounded-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+              >
+                <X className="w-6 h-6 text-white" />
+              </button>
+              <div className="p-6">
+                <h2 className="text-2xl font-bold mb-4">{selectedProject.name}</h2>
+                <div className="relative">
+                  {/* Navigation Arrows */}
+                  {selectedProject.images && selectedProject.images.length > 1 && (
+                    <>
+                      <button
+                        onClick={handlePrevImage}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+                      >
+                        <ArrowUpRight className="w-6 h-6 text-white rotate-180" />
+                      </button>
+                      <button
+                        onClick={handleNextImage}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+                      >
+                        <ArrowUpRight className="w-6 h-6 text-white" />
+                      </button>
+                    </>
+                  )}
+                  {/* Main Image */}
+                  {selectedProject.images && (
+                    <img
+                      src={`/works/${encodeURIComponent(selectedProject.images[currentImageIndex])}`}
+                      alt={`${selectedProject.name} screenshot ${currentImageIndex + 1}`}
+                      onClick={handleImageClick}
+                      className={`w-full h-auto rounded-lg cursor-pointer transition-transform duration-300 ${
+                        isZoomed ? "scale-150 cursor-zoom-out" : "cursor-zoom-in"
+                      }`}
+                      style={{ maxHeight: "70vh", objectFit: "contain" }}
+                    />
+                  )}
+                  {/* Image Counter */}
+                  {selectedProject.images && selectedProject.images.length > 1 && (
+                    <div className="text-center mt-4 text-sm text-muted-foreground">
+                      {currentImageIndex + 1} / {selectedProject.images.length}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

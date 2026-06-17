@@ -13,7 +13,6 @@ import { FaJava, FaAws } from "react-icons/fa";
 
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Button } from "@/components/ui/button";
 
 const categories = [
@@ -268,7 +267,6 @@ export default function TechnologiesPage() {
       </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

@@ -1,19 +1,18 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ChevronRight, ArrowUpRight, Bot, ArrowRight } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const projects = [
-  { name: "CostAI", desc: "AI Cost Estimator", detail: "GPT-4 powered construction cost estimator trained on 10 years of project data. Generates detailed quotes in under 60 seconds.", tech: ["Python", "OpenAI GPT-4", "FastAPI"], metric: "$2M in savings identified", gradient: "from-orange-400 to-red-500" },
-  { name: "LegalAI", desc: "Legal Document Reviewer", detail: "LLM-powered contract analysis tool that flags risks, extracts clauses, and generates summaries. Replaces 90% of first-pass review.", tech: ["Python", "LangChain", "GPT-4"], metric: "90% faster doc review", gradient: "from-slate-600 to-slate-900" },
-  { name: "RetailPro AI", desc: "Customer Support AI", detail: "Multi-channel AI support agent trained on product catalogues and policies. Handles 80% of tickets without human escalation.", tech: ["LangChain", "Node.js", "Pinecone"], metric: "80% query automation", gradient: "from-blue-500 to-cyan-600" },
-  { name: "PropPredict", desc: "Real Estate Valuation AI", detail: "ML model trained on 5M+ property transactions to predict sale prices and rental yields with ±4% accuracy.", tech: ["Python", "scikit-learn", "FastAPI"], metric: "±4% price accuracy", gradient: "from-emerald-500 to-teal-700" },
-  { name: "HireIQ", desc: "AI Recruitment Screener", detail: "Automated candidate screening tool that analyses CVs, ranks applicants, and schedules interviews — all without HR involvement.", tech: ["OpenAI", "Node.js", "PostgreSQL"], metric: "70% reduction in time-to-hire", gradient: "from-violet-500 to-purple-700" },
-  { name: "MedAI Triage", desc: "Healthcare Triage Bot", detail: "Symptom checker and patient intake bot that collects structured data before GP appointments, reducing consultation time by 40%.", tech: ["LangChain", "FastAPI", "HL7"], metric: "40% shorter consultations", gradient: "from-pink-500 to-rose-600" },
+const services = [
+  { title: "AI Chatbots & Assistants", desc: "Custom LLM-powered chatbots trained on your data for customer support, internal knowledge bases, and automated assistance.", image: "ai-1.webp", gradient: "from-violet-500 to-purple-600" },
+  { title: "Process Automation", desc: "Intelligent workflow automation using n8n, Zapier, or custom solutions to eliminate repetitive tasks and manual data entry.", image: "ai-2.webp", gradient: "from-blue-500 to-cyan-600" },
+  { title: "Document Intelligence", desc: "AI-powered document analysis for contract review, invoice processing, data extraction, and automated document workflows.", image: "ai-3.png", gradient: "from-emerald-500 to-teal-600" },
+  { title: "Predictive Analytics", desc: "Custom ML models for forecasting, trend analysis, customer behavior prediction, and data-driven decision making.", image: "ai-4.webp", gradient: "from-orange-500 to-red-600" },
+  { title: "Content Generation", desc: "AI-powered content creation for marketing copy, product descriptions, reports, and personalized communications at scale.", image: "ai-5.avif", gradient: "from-pink-500 to-rose-600" },
+  { title: "Voice & Speech AI", desc: "Speech-to-text, text-to-speech, and voice command systems for accessibility, transcription, and voice-enabled applications.", image: "ai-6.jpg", gradient: "from-amber-500 to-yellow-600" },
 ];
 
 const stats = [
@@ -26,6 +25,7 @@ const stats = [
 const techs = ["OpenAI GPT-4o", "Claude 3.5", "LangChain", "LlamaIndex", "Pinecone", "Weaviate", "Python", "FastAPI", "n8n", "Zapier", "HuggingFace", "TensorFlow"];
 
 export default function AISolutionsPage() {
+  const [location, setLocation] = useLocation();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -59,12 +59,12 @@ export default function AISolutionsPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button className="h-12 px-7 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 border-0 font-semibold"
-              onClick={() => { window.location.href = "/"; setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400); }}>
+              onClick={() => {
+                setLocation("/");
+                setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 400);
+              }}>
               Build AI Into My Business
             </Button>
-            <Link href="/work">
-              <Button variant="outline" className="h-12 px-7 border-white/10 hover:bg-white/5 font-semibold">All Projects</Button>
-            </Link>
           </div>
         </motion.div>
       </section>
@@ -83,29 +83,36 @@ export default function AISolutionsPage() {
       <section className="py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
-            <p className="text-xs font-bold tracking-widest uppercase text-violet-400 mb-2">Portfolio</p>
-            <h2 className="text-4xl font-bold tracking-tighter">AI & Automation Projects</h2>
+            <p className="text-xs font-bold tracking-widest uppercase text-violet-400 mb-2">What We Build</p>
+            <h2 className="text-4xl font-bold tracking-tighter">AI & Automation Services</h2>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence>
-              {projects.map((p, i) => (
-                <motion.div key={p.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                  whileHover={{ y: -6 }}
-                  className="group relative bg-card/40 border border-white/5 rounded-3xl overflow-hidden cursor-pointer hover:border-violet-500/30 transition-all duration-300">
-                  <div className={`w-full aspect-[4/3] bg-gradient-to-br ${p.gradient} opacity-80 group-hover:scale-105 transition-transform duration-700`} />
+              {services.map((s, i) => (
+                <motion.div key={s.title} 
+                  initial={{ opacity: 0, y: 30 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true }} 
+                  animate={{ y: [0, -6, 0] }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{
+                    opacity: { delay: i * 0.15, duration: 0.6 },
+                    y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                    scale: { duration: 0.2 }
+                  }}
+                  className="group relative bg-card/40 border border-white/5 rounded-3xl overflow-hidden hover:border-violet-500/30 transition-all duration-300">
+                  {s.image ? (
+                    <img
+                      src={`/works/${encodeURIComponent(s.image)}`}
+                      alt={s.title}
+                      className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className={`w-full aspect-[4/3] bg-gradient-to-br ${s.gradient} opacity-80 group-hover:scale-105 transition-transform duration-700`} />
+                  )}
                   <div className="p-6 relative z-10 bg-gradient-to-t from-card via-card to-transparent absolute bottom-0 inset-x-0 pt-20">
-                    <Badge className="mb-2 bg-white/10 text-white hover:bg-white/20 border-0">AI Solution</Badge>
-                    <h3 className="text-xl font-bold mb-1">{p.name}</h3>
-                    <p className="text-muted-foreground text-sm mb-3">{p.detail}</p>
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {p.tech.map(t => <span key={t} className="text-[10px] uppercase tracking-wider text-muted-foreground px-2 py-1 bg-white/5 rounded-md">{t}</span>)}
-                    </div>
-                    <div className="text-violet-400 font-semibold text-sm border-t border-white/10 pt-3">{p.metric}</div>
-                  </div>
-                  <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
-                    <div className="flex items-center gap-2 font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      View Case Study <ArrowUpRight size={20} />
-                    </div>
+                    <h3 className="text-xl font-bold mb-2">{s.title}</h3>
+                    <p className="text-muted-foreground text-sm">{s.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -146,7 +153,6 @@ export default function AISolutionsPage() {
       </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

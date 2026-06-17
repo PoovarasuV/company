@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Code2, Compass, Layers, Lightbulb, Rocket, ShieldCheck, UserCheck, Zap } from "lucide-react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingAI from "@/components/FloatingAI";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const phases = [
@@ -285,7 +284,6 @@ export default function ProcessPage() {
       </section>
 
       <Footer />
-      <FloatingAI />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -22,23 +22,13 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4 text-muted-foreground">
               <li>
-                <Link href="/" className="hover:text-primary transition-colors">
+                <Link href="/about" className="hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
                 <Link href="/" className="hover:text-primary transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="hover:text-primary transition-colors">
                   Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="hover:text-primary transition-colors">
-                  Press
                 </Link>
               </li>
             </ul>
@@ -105,34 +95,26 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-4 text-muted-foreground mb-8">
-              <li>hello@fenzo.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>San Francisco, CA</li>
+              <li>info.fenzo@gmail.com</li>
+              <li>+91 63832213966</li>
+              <li>Katpadi, Vellore, Tamil Nadu, India</li>
             </ul>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/fenzo_webdesign/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all"
               >
                 <FaInstagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://wa.me/6383213966"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all"
               >
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all"
-              >
-                <FaGithub className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center border border-border/50 hover:border-primary hover:text-primary transition-all"
-              >
-                <FaTwitter className="w-5 h-5" />
+                <FaWhatsapp className="w-5 h-5" />
               </a>
             </div>
           </div>
