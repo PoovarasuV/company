@@ -6,29 +6,25 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     quote: "FENZO transformed our business with a stunning website.",
-    name: "Sarah K.",
-    role: "CEO TechFlow",
-    initials: "SK",
+    name: "Arvind S",
+    initials: "AS",
     color: "bg-blue-500"
   },
   {
     quote: "The AI chatbot they built handles 80% of our customer queries.",
-    name: "Marcus R.",
-    role: "Founder RetailPro",
-    initials: "MR",
+    name: "Mahendran G",
+    initials: "MG",
     color: "bg-purple-500"
   },
   {
     quote: "Our e-commerce sales jumped 300% after the new platform.",
     name: "Priya S.",
-    role: "Director FashionHub",
     initials: "PS",
     color: "bg-pink-500"
   },
   {
     quote: "Best investment we made. ROI within 3 months.",
     name: "David M.",
-    role: "CTO BuildRight",
     initials: "DM",
     color: "bg-cyan-500"
   }
@@ -65,14 +61,8 @@ export default function TestimonialsSection() {
                     <p className="text-lg mb-8 font-medium">"{test.quote}"</p>
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-white ${test.color}`}>
-                      {test.initials}
-                    </div>
-                    <div>
-                      <h4 className="font-bold">{test.name}</h4>
-                      <p className="text-sm text-muted-foreground">{test.role}</p>
-                    </div>
+                  <div className="mt-8">
+                    <h4 className="font-bold text-lg">{test.name}</h4>
                   </div>
                 </div>
               </div>

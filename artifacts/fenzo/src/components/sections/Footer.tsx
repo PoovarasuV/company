@@ -96,7 +96,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4 text-muted-foreground mb-8">
               <li>info.fenzo@gmail.com</li>
-              <li>+91 63832213966</li>
+              <li>+91 6383213966</li>
               <li>Katpadi, Vellore, Tamil Nadu, India</li>
             </ul>
             <div className="flex gap-4">
