@@ -142,8 +142,9 @@ export default function ServicesPage() {
           {services.map((service, index) => {
             const isEven = index % 2 !== 0;
             return (
-              <motion.div 
+              <motion.div
                 key={service.id}
+                id={service.title.toLowerCase().replace(/\s+/g, "-")}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}

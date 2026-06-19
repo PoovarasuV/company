@@ -86,11 +86,12 @@ export default function LandingPage() {
               <div>
                 <h4 className="mb-6 font-bold uppercase tracking-wider text-sm">Services</h4>
                 <ul className="space-y-4 text-muted-foreground">
-                  <li><a href="/work/websites" className="hover:text-primary transition-colors">Website Development</a></li>
-                  <li><a href="/work/mobile" className="hover:text-primary transition-colors">Mobile App Development</a></li>
-                  <li><a href="/work/ecommerce" className="hover:text-primary transition-colors">E-Commerce Solutions</a></li>
-                  <li><a href="/work/ai" className="hover:text-primary transition-colors">AI Solutions</a></li>
-                  <li><a href="/work/dashboards" className="hover:text-primary transition-colors">Logo Design</a></li>
+                  <li><a href="/services#website-development" className="hover:text-primary transition-colors">Website Development</a></li>
+                  <li><a href="/services#mobile-app-development" className="hover:text-primary transition-colors">Mobile App Development</a></li>
+                  <li><a href="/services#e-commerce-solutions" className="hover:text-primary transition-colors">E-Commerce Solutions</a></li>
+                  <li><a href="/services#ai-solutions" className="hover:text-primary transition-colors">AI Solutions</a></li>
+                  <li><a href="/services#business-automation" className="hover:text-primary transition-colors">Business Automation</a></li>
+                  <li><a href="/services#custom-software" className="hover:text-primary transition-colors">Custom Software</a></li>
                 </ul>
               </div>
               

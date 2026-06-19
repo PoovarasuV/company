@@ -16,7 +16,6 @@ const stats = [
   { value: "25+", label: "Stores Built" },
   { value: "+340%", label: "Best Revenue Lift" },
   { value: "60%", label: "Avg Checkout Conversion" },
-  { value: "$50M+", label: "GMV Processed" },
 ];
 
 const techs = ["Next.js", "Shopify Storefront API", "Shopify Admin API", "Stripe", "Stripe Connect", "Stripe Billing", "WooCommerce", "Printful", "ShipStation", "Klaviyo", "Algolia", "Sanity CMS"];
@@ -93,7 +92,7 @@ export default function EcommercePage() {
       </section>
 
       <section className="border-y border-border/40 bg-card/30">
-        <div className="container mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
           {stats.map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
               <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">{s.value}</p>

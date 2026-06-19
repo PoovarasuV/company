@@ -56,6 +56,24 @@ function App() {
     document.documentElement.classList.add("dark");
   }, []);
 
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash) {
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 300);
+      }
+    };
+
+    handleHashScroll();
+    window.addEventListener("hashchange", handleHashScroll);
+    return () => window.removeEventListener("hashchange", handleHashScroll);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

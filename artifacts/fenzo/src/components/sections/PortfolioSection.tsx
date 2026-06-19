@@ -73,7 +73,7 @@ export default function PortfolioSection() {
                   <img
                     src={`/works/${encodeURIComponent(project.images[0])}`}
                     alt={project.name}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="absolute inset-0 w-full h-full object-cover object-left group-hover:scale-105 transition-transform duration-700"
                   />
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700`} />

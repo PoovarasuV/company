@@ -41,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-4 text-muted-foreground">
               <li>
                 <Link
-                  href="/services"
+                  href="/services#website-development"
                   className="hover:text-primary transition-colors"
                 >
                   Website Development
@@ -49,7 +49,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/services#mobile-app-development"
                   className="hover:text-primary transition-colors"
                 >
                   Mobile App Development
@@ -57,7 +57,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/services#e-commerce-solutions"
                   className="hover:text-primary transition-colors"
                 >
                   E-Commerce Solutions
@@ -65,7 +65,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/services#ai-solutions"
                   className="hover:text-primary transition-colors"
                 >
                   AI Solutions
@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/services#business-automation"
                   className="hover:text-primary transition-colors"
                 >
                   Business Automation
@@ -81,7 +81,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/services#custom-software"
                   className="hover:text-primary transition-colors"
                 >
                   Custom Software
